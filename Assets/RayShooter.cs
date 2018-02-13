@@ -28,8 +28,17 @@ public class RayShooter : MonoBehaviour {
 			Ray ray = _camera.ScreenPointToRay(point);
 			RaycastHit hit;
 			if (Physics.Raycast (ray, out hit)) {
-				StartCoroutine (SphereIndicator (hit.point));
-				//Debug.Log ("Hit " + hit.point);
+				// Определяем объект попадания луча
+				GameObject hitObject = hit.transform.gameObject;
+				ReactiveTarget target = hitObject.GetComponent<ReactiveTarget> ();
+				// Проверяем попадание в цель
+				if (target != null) {
+					target.ReactToHit ();
+					//Debug.Log ("Target hit");
+				} else {
+					StartCoroutine (SphereIndicator (hit.point));
+					//Debug.Log ("Hit " + hit.point);
+				}
 			}
 		}
 	}

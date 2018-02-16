@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 23425901763728744}
   - component: {fileID: 114685308292199540}
   - component: {fileID: 114163709483909210}
+  - component: {fileID: 195916532575803246}
+  - component: {fileID: 114410143089070434}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -108,6 +110,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456c01038a937a94289fc438e886ad20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114410143089070434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1912838854200342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94425f4c04c5f1845a34d1e8a36ad9ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114685308292199540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,3 +136,24 @@ MonoBehaviour:
   obstacleRange: 5
   fireballPrefab: {fileID: 1597975551690142, guid: e1bd551ca27522f4c858fe060f7af02e,
     type: 2}
+--- !u!195 &195916532575803246
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1912838854200342}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

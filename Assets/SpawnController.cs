@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 
 public class SpawnController : MonoBehaviour {
 	public Transform[] spawnLocations;
@@ -37,7 +39,7 @@ public class SpawnController : MonoBehaviour {
 			_enemy = Instantiate (enemyPrefab) as GameObject;
 			_enemy.transform.transform.position = spawnLocations.transform.position;
 			_angle = Random.Range (0, 360);
-			_enemy.transform.Rotate (0, _angle, 0);
+			//_enemy.transform.Rotate (0, _angle, 0);
 			_count += 1;
 		}
 	}

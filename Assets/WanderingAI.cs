@@ -15,7 +15,7 @@ public class WanderingAI : MonoBehaviour {
 	void Update () {
 		if (_alive) {
 			// Описываем движение
-			transform.Translate (0, 0, speed * Time.deltaTime);
+			//transform.Translate (0, 0, speed * Time.deltaTime);
 
 			// Описываем движение луча
 			Ray ray = new Ray (transform.position, transform.forward);
@@ -35,10 +35,12 @@ public class WanderingAI : MonoBehaviour {
 					}
 				} 
 				// Проверка препятствия и избежание столкновения
+				/*
 				else if (hit.distance < obstacleRange) {
 					float angle = Random.Range (-110, 110);
 					transform.Rotate (0, angle, 0);
 				}
+				*/
 			}
 		}
 	}

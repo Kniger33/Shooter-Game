@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyNavigation : MonoBehaviour {
-	private GameObject _target;
+	public GameObject _target;
 	private NavMeshAgent navigate;
 	private GameObject _player;
 
@@ -12,9 +12,9 @@ public class EnemyNavigation : MonoBehaviour {
 		this.gameObject.GetComponent<NavMeshAgent> ().enabled = false;
 		this.gameObject.GetComponent<NavMeshAgent> ().enabled = true;
 		navigate = GetComponent<NavMeshAgent> ();
-		_player = GameObject.FindWithTag ("Player");
-		_target = _player;
-		//this.gameObject.GetComponent<NavMeshAgent> ().avoidancePriority = Random.Range (0, 100);
+		//_player = GameObject.FindWithTag ("Player");
+		//_target = _player;
+		this.gameObject.GetComponent<NavMeshAgent> ().avoidancePriority = Random.Range (0, 100);
 	}
 
 	void Update () {

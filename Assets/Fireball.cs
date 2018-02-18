@@ -16,6 +16,8 @@ public class Fireball : MonoBehaviour {
 		if (player != null) {
 			player.Hurt (damage);
 		}
-		Destroy (this.gameObject);
+		if (other.gameObject.name != "EnemyTrigger") {
+			Destroy (this.gameObject);
+		}
 	}
 }

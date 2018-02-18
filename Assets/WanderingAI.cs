@@ -7,13 +7,14 @@ public class WanderingAI : MonoBehaviour {
 	public float speed = 3.0f;
 	public float obstacleRange = 5.0f;
 	private bool _alive = true;
+	private bool _shoot = false;
 
 	// Определяем ссылку на снаряд
 	[SerializeField] private GameObject fireballPrefab;
 	private GameObject _fireball;
 
 	void Update () {
-		if (_alive) {
+		if ((_alive) && (_shoot)) {
 			// Описываем движение
 			//transform.Translate (0, 0, speed * Time.deltaTime);
 
@@ -47,5 +48,9 @@ public class WanderingAI : MonoBehaviour {
 
 	public void SetAlive(bool alive) {
 		_alive = alive;
+	}
+
+	public void Shoot (bool shoot) {
+		_shoot = shoot;
 	}
 }

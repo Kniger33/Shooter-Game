@@ -26,6 +26,7 @@ public class RayShooter : MonoBehaviour {
 			Vector3 point = new Vector3 (_camera.pixelWidth / 2, _camera.scaledPixelHeight / 2, 0);
 			// Создаем луч
 			Ray ray = _camera.ScreenPointToRay(point);
+			Debug.Log (point);
 			RaycastHit hit;
 			if (Physics.Raycast (ray, out hit)) {
 				// Определяем объект попадания луча
@@ -37,7 +38,7 @@ public class RayShooter : MonoBehaviour {
 					//Debug.Log ("Target hit");
 				} else {
 					StartCoroutine (SphereIndicator (hit.point));
-					//Debug.Log ("Hit " + hit.point);
+					Debug.Log ("Hit " + hit.point);
 				}
 			}
 		}

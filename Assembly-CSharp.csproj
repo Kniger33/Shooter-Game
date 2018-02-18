@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\EnemyNavigation.cs" />
+     <Compile Include="Assets\EnemyTrigger.cs" />
      <Compile Include="Assets\Fireball.cs" />
      <Compile Include="Assets\FPSInput.cs" />
      <Compile Include="Assets\GateOpenDoor.cs" />

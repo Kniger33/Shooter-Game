@@ -13,6 +13,11 @@ public class SpawnController : MonoBehaviour {
 	private int _count = 0;
 		
 	private float _angle;
+	private float _spawnX;
+	private float _spawnZ;
+
+	public float areaOfSpawn = 8.0f;
+
 	private int _countLocations;
 
 	void Start () {
@@ -37,9 +42,17 @@ public class SpawnController : MonoBehaviour {
 		_count = 0;
 		while (_count < enemyCount) {
 			_enemy = Instantiate (enemyPrefab) as GameObject;
-			_enemy.transform.transform.position = spawnLocations.transform.position;
+
+			_enemy.transform.position = spawnLocations.transform.position;
+
+			_spawnX = spawnLocations.transform.position.x + Random.Range (-areaOfSpawn, areaOfSpawn);
+			_spawnZ = spawnLocations.transform.position.z + Random.Range (-areaOfSpawn, areaOfSpawn);
+
+			_enemy.transform.position = new Vector3 (_spawnX, 1, _spawnZ);
+
 			_angle = Random.Range (0, 360);
-			//_enemy.transform.Rotate (0, _angle, 0);
+			_enemy.transform.Rotate (0, _angle, 0);
+
 			_count += 1;
 		}
 	}

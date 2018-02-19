@@ -9609,10 +9609,9 @@ MonoBehaviour:
   - {fileID: 970052393}
   - {fileID: 1303470720}
   - {fileID: 333403519}
-  enemyPrefab: {fileID: 1464705081012584, guid: 39d694122026d534f84c76c5d1f0cc04,
+  enemyPrefab: {fileID: 1912838854200342, guid: 789e287b31ed94a4b9fb33ec8f3b588c,
     type: 2}
   enemyCount: 5
-  areaOfSpawn: 8
 --- !u!4 &1073271021
 Transform:
   m_ObjectHideFlags: 0

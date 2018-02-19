@@ -52,16 +52,23 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\EnemyNavigation.cs" />
-     <Compile Include="Assets\EnemyTrigger.cs" />
+     <Compile Include="Assets\FinishPoint.cs" />
      <Compile Include="Assets\Fireball.cs" />
      <Compile Include="Assets\FPSInput.cs" />
      <Compile Include="Assets\GateOpenDoor.cs" />
+     <Compile Include="Assets\MazeGenerator\Cell.cs" />
+     <Compile Include="Assets\MazeGenerator\CellAndRelativePosition.cs" />
+     <Compile Include="Assets\MazeGenerator\ListExtensions.cs" />
+     <Compile Include="Assets\MazeGenerator\MazeGenerator.cs" />
+     <Compile Include="Assets\MazeGenerator\VisualCell.cs" />
      <Compile Include="Assets\MouseLook.cs" />
+     <Compile Include="Assets\OldSpawnController.cs" />
      <Compile Include="Assets\PlayerCharacter.cs" />
      <Compile Include="Assets\RayShooter.cs" />
      <Compile Include="Assets\ReactiveTarget.cs" />
      <Compile Include="Assets\SceneController.cs" />
      <Compile Include="Assets\SpawnController.cs" />
+     <Compile Include="Assets\StartPoint.cs" />
      <Compile Include="Assets\WanderingAI.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

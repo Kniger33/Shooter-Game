@@ -1,59 +1,52 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
-
 
 public class SpawnController : MonoBehaviour {
-	public Transform[] spawnLocations;
-	[SerializeField] private GameObject enemyPrefab;
-	private GameObject _enemy;
-
-	public int enemyCount = 5;
-	private int _count = 0;
 		
-	private float _angle;
-	private float _spawnX;
-	private float _spawnZ;
+		[SerializeField] private GameObject enemyPrefab;
+		private GameObject _enemy;
 
-	public float areaOfSpawn = 8.0f;
+		public int enemyCount = 5;
+		private int _count = 0;
 
-	private int _countLocations;
+		//private float _angle;
 
-	void Start () {
-		_countLocations = spawnLocations.Length;
-		for (int i = 0; i < _countLocations; i++) {
-			Spawn (spawnLocations [i]);
+		private int _cellScale = 5;
+		private int _maxFactorX;
+		private int _maxFactorZ;
+
+		void Start () {
+			MazeGenerator generator = GameObject.Find ("MazeGenerate").GetComponent<MazeGenerator> ();
+			_maxFactorX = generator._width - 1;
+			_maxFactorZ = generator._height;
 		}
-	}
-		
-	void Update () {
-		SceneController behavior = GetComponentInParent<SceneController> ();
-		if (_enemy == null) {
-			Debug.Log ("null");
-			behavior.ActiveEnemy (false);
-		} else {
-			Debug.Log ("Yes");
-			behavior.ActiveEnemy (true);
-		}
-	}
 
-	void Spawn (Transform spawnLocations) {
-		_count = 0;
-		while (_count < enemyCount) {
+		void Update () {
+			if (_count < enemyCount) {
+				Spawn ();
+				_count++;
+			}
+		/*
+			SceneController behavior = GetComponentInParent<SceneController> ();
+			if (_enemy == null) {
+				Debug.Log ("null");
+				behavior.ActiveEnemy (false);
+			} else {
+				Debug.Log ("Yes");
+				behavior.ActiveEnemy (true);
+			}
+		*/
+		}
+
+		void Spawn () {
 			_enemy = Instantiate (enemyPrefab) as GameObject;
+			_enemy.transform.position = new Vector3Int (_cellScale * Random.Range(0, _maxFactorX), 1, _cellScale * Random.Range(2, _maxFactorZ));
 
-			_enemy.transform.position = spawnLocations.transform.position;
-
-			_spawnX = spawnLocations.transform.position.x + Random.Range (-areaOfSpawn, areaOfSpawn);
-			_spawnZ = spawnLocations.transform.position.z + Random.Range (-areaOfSpawn, areaOfSpawn);
-
-			_enemy.transform.position = new Vector3 (_spawnX, 1, _spawnZ);
-
-			_angle = Random.Range (0, 360);
-			_enemy.transform.Rotate (0, _angle, 0);
-
-			_count += 1;
+			//_angle = Random.Range (0, 360);
+			//_enemy.transform.Rotate (0, _angle, 0);
+			//_count += 1;
 		}
-	}
 }
+
+

@@ -10,7 +10,7 @@ public class FinishPoint : MonoBehaviour {
 	void Start () {
 		MazeGenerator generator = GameObject.Find ("MazeGenerate").GetComponent<MazeGenerator> ();
 		_maxFactorX = generator._width - 1;
-		transform.position = new Vector3Int (_cellScale * Random.Range(0, _maxFactorX), 1, 50);
+		transform.position = new Vector3Int (_cellScale * Random.Range(0, _maxFactorX), 2, 50);
 	}
 
 	void OnTriggerEnter (Collider other) {

@@ -31,11 +31,13 @@ public class RayShooter : MonoBehaviour {
 				// Определяем объект попадания луча
 				GameObject hitObject = hit.transform.gameObject;
 				ReactiveTarget target = hitObject.GetComponent<ReactiveTarget> ();
+				Fireball fireball = hitObject.GetComponent<Fireball> ();
+
 				// Проверяем попадание в цель
 				if (target != null) {
 					target.ReactToHit ();
 					//Debug.Log ("Target hit");
-				} else {
+				} else if (fireball == null) {
 					StartCoroutine (SphereIndicator (hit.point));
 					//Debug.Log ("Hit " + hit.point);
 				}
